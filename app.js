@@ -9,24 +9,24 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const PORT = 8080;
+const PORT = 404;
 
 var router = express.Router();
 
-router.get('/', function (request, response) {
+router.get('/', function(request, response) {
   response.render('index', { title: 'Welcome!' });
 });
 
-router.get('/student', function (request, response) {
+router.get('/student', function(request, response) {
   response.render('index', { title: 'Welcome, student!' });
 });
 
-router.get('/teacher', function (request, response) {
+router.get('/teacher', function(request, response) {
   response.render('index', { title: 'Welcome, teacher!' });
 });
 
 app.use('/', router);
 
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   console.log('Listening on port ' + PORT);
 });
